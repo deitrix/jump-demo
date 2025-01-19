@@ -105,10 +105,9 @@ func (g *Game) Update() error {
 						g.Player.Vel.Y = 0
 					}
 				}
+				// Update the player rect, as it will have changed.
+				playerRect = Rect{X: g.Player.Pos.X - playerWidth/2, Y: g.Player.Pos.Y - playerHeight, Width: playerWidth, Height: playerHeight}
 			}
-
-			// Update the player rect, as it may have changed.
-			playerRect = Rect{X: g.Player.Pos.X - playerWidth/2, Y: g.Player.Pos.Y - playerHeight, Width: playerWidth, Height: playerHeight}
 		}
 	}
 
